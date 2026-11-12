@@ -19,60 +19,83 @@
 // }
 
 
-// // Función que se ejecutará cuando la página esté completamente cargada
-// function onPageLoad() {
-//     // Este bloque de código se ejecutará después de que la página esté completamente cargada
+// Función que se ejecutará cuando la página esté completamente cargada
+function onPageLoad() {
+    // Este bloque de código se ejecutará después de que la página esté completamente cargada
 
-//     // Carga asíncrona del IFrame Player API code
-//     var tag = document.createElement('script');
-//     tag.src = "https://www.youtube.com/iframe_api";
-//     var firstScriptTag = document.getElementsByTagName('script')[0];
-//     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-// }
+    // Carga asíncrona del IFrame Player API code
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
 
-// // Asigna la función onPageLoad al evento window.onload
-// window.onload = onPageLoad;
+// Asigna la función onPageLoad al evento window.onload
+window.onload = onPageLoad;
 
-// // Resto de tu código
-// var player;
+// Resto de tu código
+var player1, player2;
 
-// function onYouTubeIframeAPIReady() {
-//     player = new YT.Player('player', {
-//         height: '360',
-//         width: '640',
-//         videoId: '3OOkC4c6hYo',
-//         events: {
-//             'onReady': onPlayerReady,
-//             'onStateChange': onPlayerStateChange
-//         }
-//     });
-// }
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '360',
+        width: '640',
+        videoId: 'dZuKpI0Bmvw',
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
 
-// // Resto de tus funciones
+    player2 = new YT.Player('player2', {
+        height: '360',
+        width: '640',
+        videoId: 'MlinoxpFNOo', // Reemplaza 'TU_VIDEO_ID_2' con el ID del segundo video
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+
+}
+
+
+// Resto de tus funciones
 
 
 
-// // 4. The API will call this function when the video player is ready. 
-// function onPlayerReady(event) {
-//     event.target.playVideo();
-// }
-// // 5. The API calls this function when the player's state changes. 
-// //    The function indicates that when playing a video (state=1), 
-// //    the player should play for six seconds and then stop. 
-// var done = false;
-// function onPlayerStateChange(event) {
-//     if (event.data == YT.PlayerState.PLAYING && !done) {
-//         // setTimeout(stopVideo, 6000);
-//         done = true;
-//     }
-// }
-// function stopVideo() {
-//     player.stopVideo();
-// }
+// 4. The API will call this function when the video player is ready. 
+function onPlayerReady(event) {
+    //event.target.playVideo();
+}
+// 5. The API calls this function when the player's state changes. 
+//    The function indicates that when playing a video (state=1), 
+//    the player should play for six seconds and then stop. 
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        // setTimeout(stopVideo, 6000);
+        done = true;
+    }
+}
+function stopVideo() {
+    player.stopVideo();
+}
 
-// function PlayVideo() {
-//     player.playVideo();
-// } 
+function stopVideo2() {
+    player2.stopVideo();
+}
+
+function PlayVideo() {
+    player.playVideo();
+}
+
+
+function PlayVideo2() {
+    player2.playVideo2();
+}
+
+
 
 
 
@@ -136,26 +159,6 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
         actualizarMenu();
-    });
-
-    $("#btn_form_whatsapp").click(function () {
-        $("#btn_form_contacto").addClass("oculto");
-        $("#btn_form_whatsapp").addClass("oculto");
-        $("#form_principal").addClass("oculto");
-
-        setTimeout(function () {
-        $("#form_whatsapp").addClass("visible");
-        }, 300);
-    });
-
-    $("#btn_form_whatsapp_close").click(function () {
-        $("#form_whatsapp").removeClass("visible");
-
-        setTimeout(function () {
-        $("#btn_form_contacto").removeClass("oculto");
-        $("#btn_form_whatsapp").removeClass("oculto");
-        $("#form_principal").removeClass("oculto");
-        }, 300);
     });
 });
 
@@ -303,10 +306,27 @@ $(document).ready(function () {
 
     $("#btn_youtube").click(function () {
         //alert('df');
-        $('.youtube-prev').removeClass('active');
-        $('.youtube').addClass('active');
-
+        $('#youtube-prev-1').removeClass('active');
+        $('#youtube-1').addClass('active');
+        stopVideo2();
         PlayVideo();
     });
+
+    $("#btn_youtube_2").click(function () {
+        //alert('df');
+        $('#youtube-prev-2').removeClass('active');
+        $('#youtube-2').addClass('active');
+
+        stopVideo();
+        PlayVideo2();
+    });
+
+
+
+
 });
+
+
+
+
 

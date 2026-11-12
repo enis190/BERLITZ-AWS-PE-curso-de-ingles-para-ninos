@@ -3,8 +3,7 @@ var tel = '955099599';
 
 /**LOADER */
 $(document).ready(function () {
-    $(".jm-loadingpage").fadeOut("slow");
-    menuEstatico();
+    $(".jm-loadingpage").fadeOut("slow");;
 });
 
 /**HEADER */
@@ -34,6 +33,32 @@ $(".close-wsp").click(function () {
     $(".c-wsp-container").removeClass('active');
 });
 
+// $("#frm-wsp2").submit(function (event) {
+
+//     window.open("https://api.whatsapp.com/send?phone=51"+tel, "_blank");
+
+//     // dataString = $("#frm-wsp").serialize();
+//     // $('#wsp-btn').html('<div class="lds-ring"><div></div><div></div><div></div><div>');
+//     // $("#frm-wsp *").prop('disabled', true);
+
+//     // $.ajax({
+//     //     type: "POST",
+//     //     url: "https://hook.integromat.com/51h4enotpll6ib1jxboms9wzh5erm2wr",
+//     //     data: dataString,
+//     //     success: function (data) {
+//     //         $('#wsp-btn').html('Iniciar Chat');
+//     //         $(".close-wsp").click();
+//     //         window.open("https://api.whatsapp.com/send?phone=51"+tel, "_blank");
+//     //     },
+//     //     error: function (xhr, status) {
+//     //         console.log('Error drive -> ');
+//     //         $("#frm-1 *").prop('disabled', false);
+//     //     }
+//     // });
+
+//     return false;
+
+// });
 
 
 /**TIPOLODIA */
@@ -255,6 +280,36 @@ function PlayVideo() {
     player.playVideo();
 }
 
+/**Activando play solo en visibilidad */
+// var carga_video = false;
+// var carga_count = false;
+// $(window).scroll(function () {
+//     if ((window.scrollY > $("#section_nosotros").offset().top - 200) && (window.scrollY < $(".caracteristicas").offset().top - 200)) {
+//         //$("#preview_video").click();
+//         if (carga_video == false) {
+//             carga_video = true;
+//             $("#preview_video").click();
+//             //PlayVideo();
+//         }
+//         else {
+//             PlayVideo();
+//         }
+//     } else {
+//         stopVideo();
+//     }
+
+
+//     if ((window.scrollY > $(".trayectoria").offset().top - 300)) {
+//         count_animacion();
+//     }
+
+// });
+
+function click_pre_video() {
+    //alert('123');
+}
+
+
 
 
 
@@ -272,14 +327,14 @@ $(document).on('ready', function () {
         autoplay: true
     });
     $(".regular2").slick({
-        dots: false,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 1000,
-        fade: true,
         initialSlide: 0,
-        autoplay: true
+        autoplay: false,
+        dots: true,
+        arrows: false,
     });
     $('.responsive').slick({
         dots: true,
@@ -287,7 +342,7 @@ $(document).on('ready', function () {
         speed: 300,
         autoplay: true,
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         responsive: [{
             breakpoint: 1024,
@@ -355,14 +410,35 @@ $(document).on('ready', function () {
 });
 
 
+/**Scroll menu xs */
+$(".btn_formulario").click(function () {
+    // $('html, body').animate({
+    //     scrollTop: $(".formulario").offset().top - 110
+    // }, 500);
+    // $("#btn-menu-xs-cerrar").click();
+
+    // $('html, body').scrollTop($(".formulario").offset().top - 110);
+    // $("#btn-menu-xs-cerrar").click();
+});
+
+// $(".btn_promos").click(function () {
+//     $('html, body').animate({
+//         scrollTop: $(".promos").offset().top - 110
+//     }, 500);
+//     $("#btn-menu-xs-cerrar").click();
+// });
+
 
 
 $(".btn_promos").click(function () {
-    $('html, body').scrollTop($(".promos").offset().top - 70);
+    $('html, body').scrollTop($(".promos").offset().top - 110);
     $("#btn-menu-xs-cerrar").click();
 });
 
 
+function click_promos() {
+    
+}
 
 function click_formulario() {
     $('html, body').scrollTop($(".formulario").offset().top - 110);
@@ -371,26 +447,83 @@ function click_formulario() {
 
 
 
+
+
+
+
+
+$(".btn_viaje").click(function () {
+    $('html, body').scrollTop($(".viaje").offset().top - 110);
+    $("#btn-menu-xs-cerrar").click();
+});
+
+
+$(".btn_acerca").click(function () {
+    $('html, body').scrollTop($(".acerca").offset().top - 110);
+    $("#btn-menu-xs-cerrar").click();
+});
+
+$(".btn_niveles").click(function () {
+    $('html, body').scrollTop($(".niveles").offset().top - 110);
+    $("#btn-menu-xs-cerrar").click();
+});
+
+$(".btn_metodo").click(function () {
+    $('html, body').scrollTop($(".metodo").offset().top - 110);
+    $("#btn-menu-xs-cerrar").click();
+});
+
+$(".btn_testimonio2").click(function () {
+    $('html, body').scrollTop($(".testimonios").offset().top - 110);
+    $("#btn-menu-xs-cerrar").click();
+});
+
+$(".btn_porque").click(function () {
+    $('html, body').scrollTop($(".porque").offset().top - 110);
+    $("#btn-menu-xs-cerrar").click();
+});
+
+$(".btn_ventajas").click(function () {
+    // $('html, body').scrollTop($(".ventajas").offset().top - 110);
+    // $("#btn-menu-xs-cerrar").click();
+});
+
+function click_ventajas() {
+    $('html, body').scrollTop($(".ventajas").offset().top - 110);
+    $("#btn-menu-xs-cerrar").click();
+}
+
+
 function click_section(v_section) {
-    $('html, body').scrollTop($("."+v_section).offset().top - 70);
+    $('html, body').scrollTop($("."+v_section).offset().top - 110);
     $("#btn-menu-xs-cerrar").click();
 }
 
 
 
-function menuEstatico(){
-    const menu = document.querySelector(".seccion_menu_desktop");
-    if (!menu) return;
+$("#btn_galeria").click(function () {
+    $('html, body').animate({
+        scrollTop: $(".galeria").offset().top - 80
+    }, 500);
+    $("#btn-menu-xs-cerrar").click();
+});
+$("#btn_tipo").click(function () {
+    $('html, body').animate({
+        scrollTop: $(".planos").offset().top - 80
+    }, 500);
+    $("#btn-menu-xs-cerrar").click();
+});
+$("#btn_clientes").click(function () {
+    $('html, body').animate({
+        scrollTop: $(".cursos").offset().top - 80
+    }, 500);
+    $("#btn-menu-xs-cerrar").click();
+});
 
-    const menuOffsetTop = menu.offsetTop;
-
-    window.addEventListener("scroll", function () {
-        if (window.scrollY >= menuOffsetTop) {
-        menu.classList.add("menu_estatico");
-        } else {
-        menu.classList.remove("menu_estatico");
-        }
-    });
-}
-
+$("#btn_porque").click(function () {
+    $('html, body').animate({
+        scrollTop: $(".porque").offset().top - 80
+    }, 500);
+    $("#btn-menu-xs-cerrar").click();
+});
 

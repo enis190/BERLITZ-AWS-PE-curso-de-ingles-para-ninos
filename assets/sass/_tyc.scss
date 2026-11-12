@@ -41,38 +41,6 @@
                 color:#FFF;
             }
         }
-        .accordion-body {
-            color: #fff;
-            ul {
-              padding-left: 15px;
-              li {
-                font-size: 0.7rem;
-              }
-            }
-            p{
-              color: #fff;
-              font-size: 0.7rem;
-              margin-bottom: 0px;
-            }
-            .cerrar {
-              // background-color: red;
-              float: right;
-              a {
-                text-decoration: none;
-                color: #fff;
-                span {
-                  width: 25px;
-                  height: 25px;
-                  border-radius: 50%;
-                  border: 1px solid #3cdf86;
-                  display: inline-block;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                }
-              }
-            }
-          }
     }
 }
 

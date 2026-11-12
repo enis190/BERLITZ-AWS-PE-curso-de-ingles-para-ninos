@@ -40,7 +40,7 @@
             text-decoration: none;
             color: #FFF;
             border-radius: 50%;
-            background-color: $COLOR_1;
+            background-color: $COLOR_3;
 
             justify-content: center;
             align-items: center;
@@ -72,6 +72,19 @@
         //     }
         // }
     }
+    .logo{
+        img{
+            opacity: 0;
+            transition: 0.3s;
+        }
+    }
+    .call {
+        .btn-menu{
+            top: 10px;
+            transition: 0.3s;
+        }
+    }
+    
 }
 
 .menu-xs {
@@ -89,7 +102,6 @@
     padding: 30px;
 
     &.active {
-        z-index: 99999;
         right: 0;
         -webkit-box-shadow: -2px 4px 21px -1px rgba(0, 0, 0, 0.67);
         -moz-box-shadow: -2px 4px 21px -1px rgba(0, 0, 0, 0.67);
@@ -116,14 +128,15 @@
             text-transform: uppercase;
         }
     }
+    
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .header {
         position: fixed;
-        background-color: $COLOR_1;
-        /*padding-bottom: 15px;*/
+        //background-color: $COLOR_3;
+        padding-bottom: 15px;
         .c-container {
             .logo {
                 text-align: center;
@@ -146,6 +159,7 @@
         }
 
         &.c-fixed {
+            background-color: $COLOR_3;
             .c-container {
                 .logo {
                     img {
@@ -153,6 +167,19 @@
                     }
                 }
             }
+        }
+        &.c-fixed{
+            .logo{
+                img{
+                    opacity: 1;
+                }
+            }
+            .call {
+                .btn-menu{
+                    top: 20px;
+                }
+            }
+            
         }
     }
 

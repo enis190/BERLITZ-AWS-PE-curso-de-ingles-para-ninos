@@ -1,1 +1,1 @@
-# BERLITZ-AWS-PE-curso-de-ingles-para-ninos
+# BERLITZ-AWS-PE-ingles-intensivo

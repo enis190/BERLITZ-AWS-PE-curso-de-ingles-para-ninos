@@ -1,8 +1,21 @@
 .titulo-1 {
-    font-family: 'IBMPlexSans-SemiBold';
+    // font-family: 'IBMPlexSans-SemiBold';
+    // color: $COLOR_1;
+    // span {
+    //     font-family: 'IBMPlexSans-SemiBoldItalic';
+    // }
+
+    font-family: 'IBMPlexSans-BoldItalic';
     color: $COLOR_1;
-    span {
-        font-family: 'IBMPlexSans-SemiBoldItalic';
+    font-size: 2.4rem;
+}
+
+.sub-titulo-1{
+    color: #000;
+    font-family: 'IBMPlexSans-Regular'; 
+    font-size: 1.2rem;
+    span{
+        font-family: 'IBMPlexSans-BoldItalic';  
     }
 }
 
@@ -46,6 +59,33 @@
     }
 }
 
+.cta-1{
+    background-color: $COLOR_5;
+    color: #10337D;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    span{
+        font-family: 'IBMPlexSans-SemiBoldItalic'; 
+    }
+    &:hover{
+        background-color: $COLOR_3;
+        color: #fff;
+    }
+}
+
+.c-no-margin {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.c-no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .c-container {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -54,6 +94,8 @@
 .c-padding {
     padding: 20px;
 }
+
+
 
 .c-container-small {}
 
@@ -82,6 +124,14 @@
         // padding-left: 70px;
         // padding-right: 70px;
     }
+
+    .c-padding-l-fluid {
+        padding-left: 120px;
+    }
+    .c-padding-r-fluid {
+        padding-right: 120px;
+    }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

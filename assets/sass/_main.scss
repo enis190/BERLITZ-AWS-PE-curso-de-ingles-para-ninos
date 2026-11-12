@@ -3,6 +3,10 @@ $COLOR_1: #004FEF;
 $COLOR_2: #00E790;
 $COLOR_3: #FF495C;
 $COLOR_4: #643BA3;
+$COLOR_5:#ffd62c;
+$COLOR_6:#8F79FF;
+$COLOR_7: #10337D;
+
 
 /*LOADER*/
 .jm-loadingpage {
@@ -12,7 +16,7 @@ $COLOR_4: #643BA3;
   width: 100%;
   height: 100%;
   z-index: 999999999;
-  background-color: #004FEF;
+  background-color: $COLOR_1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +61,7 @@ $COLOR_4: #643BA3;
 
 /*Fuentes principales*/
 p {
-  color: #778299;
+  color: #000;
   font-size: .95rem;
 
   span {
@@ -500,10 +504,10 @@ p {
   &:hover,
   &.active {
     a {
-      background-color: $COLOR_3;
+      background-color: $COLOR_5;
 
       .txt {
-        color: #FFF;
+        color: #10337D;
       }
 
       .img {
@@ -522,7 +526,7 @@ p {
 
 @keyframes c_keyframe__btn_fixed {
   0% {
-    border: 2px solid $COLOR_3;
+    border: 2px solid $COLOR_7;
   }
 
   5% {
@@ -530,7 +534,7 @@ p {
   }
 
   10% {
-    border: 2px solid $COLOR_3;
+    border: 2px solid $COLOR_7;
   }
 
   15% {
@@ -538,12 +542,12 @@ p {
   }
 
   20% {
-    border: 2px solid $COLOR_3;
+    border: 2px solid $COLOR_7;
   }
 
 
   100% {
-    border: 2px solid $COLOR_3;
+    border: 2px solid $COLOR_7;
   }
 }
 
@@ -609,7 +613,7 @@ p {
   position: fixed;
   bottom: 90px;
   right: 25px;
-  z-index: 23;
+  z-index: 9999;
   width: 40px;
   height: 40px;
   background-color: #FFF;
@@ -664,11 +668,43 @@ p {
   }
 }
 
+
+
+
+.modal {
+  .modal-body {
+    padding: 0px;
+  }
+  .modal-content {
+    border: 0px;
+    background-color: transparent;
+  }
+  .modal-header {
+    button {
+      border: 0px;
+      background-color: $COLOR_1;
+      border-radius: 50%;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  iframe {
+    height: 400px;
+  }
+}
+
+
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .btn-fixed-call.active a .txt{
+    text-transform: uppercase;
+  }
   .c-subir{
-    right: 23px;
-    bottom: 85px;
+    bottom: 70px;
+    right: 10px;
   }
   .c-wsp {
     width: 55px;
@@ -682,9 +718,7 @@ p {
   }
 
   body {
-    @media (min-width:768px){
-      margin-bottom: 40px;
-    }
+    margin-bottom: 40px;
   }
 
   .btn-fixed-call {
@@ -759,41 +793,14 @@ p {
 
 
 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
 
-.d_dsk{
-  display: block;
-}
-.d_mob{
-  display: none;
-}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
 
-@media (max-width:768px){
-    .d_dsk{
-      display: none;
-    }
-    .d_mob{
-      display: block;
-    }
-}
-
-
-
-@media (max-width:574px){
-    .banner_principal_temp{
-        padding-top: 80px;
-    }
-}
-
-@media (max-width:420px){
-    .banner_principal_temp{
-        padding-top: 60px;
-    }
-}
-
-
-
-
-
-
-
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

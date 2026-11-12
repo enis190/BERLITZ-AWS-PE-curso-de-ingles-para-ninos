@@ -1,7 +1,7 @@
 .pre-footer{
     padding-top: 70px;
     padding-bottom: 70px;
-    background-color: $COLOR_2;
+    background-color: #000;
     background-image: url('../img/typ.jpg');
     background-image: -webkit-image-set(url('../img/typ.webp')1x);
     background-position: top right;
@@ -37,16 +37,16 @@
 .footer{
     background-color: #000;
     padding: 15px 25px 15px;
-    color: $COLOR_1;
+    color: #FFF;
 }
 
 .footer2{
-    background-color: $COLOR_2;
+    background-color: $COLOR_3;
     padding: 15px 25px 15px 25px;
     
     p{
         margin: 0px;
-        color: $COLOR_1;
+        color: #FFF;
     }
 }
 
@@ -62,6 +62,9 @@
             padding-left: 30px;
             padding-right: 30px;
         }
+    }
+    .footer{
+        margin-bottom: 65px;
     }
 }
 
@@ -85,9 +88,3 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}
-
-@media (min-width:579px){
-    .footer{
-        padding-bottom: 20px;
-    }
-}
